@@ -5,4 +5,10 @@
 //  Created by Hasan on 22.11.20.
 //
 
-protocol GameAPI {}
+import RxSwift
+
+protocol GameAPI {
+    
+    // MARK: GET
+    func getWordList() -> Single<[WordList]>
+}
