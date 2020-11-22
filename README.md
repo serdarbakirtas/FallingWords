@@ -66,3 +66,16 @@
  	- Naming of files in tests folder:
 		+ For unit test: *Some*UnitTest
 		+ For mock data: *Some*Mock
+		
+## Output Answers
+***
++ Decisions made to solve certain aspects of the game
+	- I decided how to generate the random number with minimum code.
+	- I decided the best architecture for the testable code.
+	- I decided to use UIKit instead of storyboard/xib files for good memory performance.
++ Decisions made because of restricted time
+	- I worked on the design architecture which I have more experienced.
+	- I implemented simple design.
++ Improve or add if there had been more time
+ 	- UI Test
+	- Use locale storage to save the scores
