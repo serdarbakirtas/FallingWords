@@ -14,6 +14,7 @@ class GameViewMock: BaseViewMock, GameView {
     var showThanksViewExpectation = XCTestCase().expectation(description: "Show Thanks View")
     
     var isCorrectAnswer = false
+    var isThanksViewCalled = false
     
     func reloadGame(_ items: [GameData]) {
         reloadGameViewExpectation.fulfill()
@@ -21,6 +22,7 @@ class GameViewMock: BaseViewMock, GameView {
     
     func showThanksView() {
         showThanksViewExpectation.fulfill()
+        isThanksViewCalled = true
     }
     
     func isCorrectAnswer(_ isCorrect: Bool) {

@@ -7,9 +7,11 @@
 
 @testable import FallingWords
 import XCTest
+import MockUIAlertController
 
 class GamePresenterUnitTest: XCTestCase {
     
+    var alertVerifier: QCOMockAlertVerifier!
     var presenter: GamePresenter<GameViewMock>!
     let viewMock = GameViewMock()
     let apiMock = GameAPIMock()
@@ -21,11 +23,14 @@ class GamePresenterUnitTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        alertVerifier = QCOMockAlertVerifier()
         presenter = GamePresenter(view: viewMock, apiInstance: apiMock)
     }
     
     override func tearDown() {
         super.tearDown()
+        
+        alertVerifier = nil
     }
     
     func testLoadingWordsAddsWords() {
@@ -47,7 +52,9 @@ class GamePresenterUnitTest: XCTestCase {
         presenter.result.append(gameData)
         presenter.onSendAnswer(isAnswer: true)
         
-        XCTAssertEqual(apiMock.correctAnswer.isCorrect, answer.isCorrect)
+        XCTAssertEqual(apiMock.correctAnswer?.isCorrect, answer.isCorrect)
+        XCTAssertTrue((apiMock.correctAnswer != nil))
+        XCTAssertEqual(viewMock.isCorrectAnswer, true)
     }
     
     func testSendingAnswerSendsFalse() {
@@ -56,7 +63,8 @@ class GamePresenterUnitTest: XCTestCase {
         presenter.result.append(gameData)
         presenter.onSendAnswer(isAnswer: false)
         
-        XCTAssertEqual(apiMock.correctAnswer.isCorrect, answer.isCorrect)
+        XCTAssertEqual(apiMock.correctAnswer?.isCorrect, answer.isCorrect)
+        XCTAssertEqual(viewMock.isCorrectAnswer, false)
     }
     
     func testGettingGameResult() {
@@ -87,14 +95,38 @@ class GamePresenterUnitTest: XCTestCase {
         _ = presenter.isFinishGame()
         
         XCTAssertEqual(apiMock.isRemoveAnswerCalled, true)
+        XCTAssertFalse((apiMock.correctAnswer != nil))
     }
     
     func testAddingWrongAnswersGetsGameRestuls() {
         presenter.totalWrongCount = 3
-        apiMock.correctAnswer.isCorrect = false
+        apiMock.correctAnswer?.isCorrect = false
         _ = presenter.isFinishGame()
         
         XCTAssertEqual(apiMock.isRemoveAnswerCalled, true)
+    }
+    
+    func testTappingYesRemovesAllDataAndCreatesNewGame() {
+        presenter.totalWrongCount = 3
+        apiMock.correctAnswer?.isCorrect = false
+        _ = presenter.isFinishGame()
+        
+        alertVerifier.executeActionForButton(withTitle: "yes")
+        
+        XCTAssertEqual(apiMock.isRemoveAnswerCalled, true)
+        XCTAssertFalse((apiMock.correctAnswer != nil))
+    }
+    
+    func testTappingNoRemovesAllData() {
+        presenter.totalWrongCount = 3
+        apiMock.correctAnswer?.isCorrect = false
+        _ = presenter.isFinishGame()
+        
+        alertVerifier.executeActionForButton(withTitle: "no")
+        wait(for: [viewMock.showThanksViewExpectation], timeout: 1)
+        
+        XCTAssertEqual(viewMock.isThanksViewCalled, true)
+        XCTAssertFalse((apiMock.correctAnswer != nil))
     }
 }
 

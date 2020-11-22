@@ -13,7 +13,7 @@ protocol BaseView: BasePresenterView {
 
 class BaseViewController: UIViewController {
     
-    private var presenter: BaseViewPresenter<BaseViewController>!
+    private var presenter: BasePresenter<BaseViewController>!
     
     lazy var fullScreenActivityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .gray)

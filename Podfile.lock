@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.1.0)
+  - MockUIAlertController (3.2.0)
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - Alamofire (= 5.1.0)
+  - MockUIAlertController (= 3.2.0)
   - RxSwift (= 5.1.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MockUIAlertController
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  MockUIAlertController: 77ea9521a5762c2bfa971fd06a0794c4ce863fd6
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 062300eb2093fb1b3a4386a7d0b1215571e0ff0f
+PODFILE CHECKSUM: fbe2dd97dbbd5e632d898da6853f016b6458065e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

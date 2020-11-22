@@ -21,7 +21,6 @@
 		9F6264352569DAE600C54EC0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264342569DAE600C54EC0 /* WordList.swift */; };
 		9F62643B2569DB8900C54EC0 /* AFErrorConvertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62643A2569DB8900C54EC0 /* AFErrorConvertExtension.swift */; };
 		9F6264432569DB9800C54EC0 /* RxObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264422569DB9800C54EC0 /* RxObservableExtension.swift */; };
-		9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62644A2569DD3900C54EC0 /* BasePresenterView.swift */; };
 		9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264522569DD4600C54EC0 /* BaseViewController.swift */; };
 		9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */; };
 		9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62645C2569DFE100C54EC0 /* GamePresenter.swift */; };
@@ -81,7 +80,6 @@
 		9F6264342569DAE600C54EC0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		9F62643A2569DB8900C54EC0 /* AFErrorConvertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFErrorConvertExtension.swift; sourceTree = "<group>"; };
 		9F6264422569DB9800C54EC0 /* RxObservableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableExtension.swift; sourceTree = "<group>"; };
-		9F62644A2569DD3900C54EC0 /* BasePresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenterView.swift; sourceTree = "<group>"; };
 		9F6264522569DD4600C54EC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewPresenter.swift; sourceTree = "<group>"; };
 		9F62645C2569DFE100C54EC0 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 		9F6264492569DD2C00C54EC0 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				9F62644A2569DD3900C54EC0 /* BasePresenterView.swift */,
 				9F6264522569DD4600C54EC0 /* BaseViewController.swift */,
 				9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */,
 			);
@@ -571,7 +568,6 @@
 				9F445AF42569D56500789290 /* AppDelegate.swift in Sources */,
 				9F445B562569D73900789290 /* GameAPIRepo.swift in Sources */,
 				9F62647A2569F38200C54EC0 /* BaseUIButton.swift in Sources */,
-				9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */,
 				9F445B472569D65000789290 /* GameViewController.swift in Sources */,
 				9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */,
 				9F445B3A2569D61500789290 /* ColorPallet.swift in Sources */,

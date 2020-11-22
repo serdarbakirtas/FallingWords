@@ -10,14 +10,14 @@ import XCTest
 
 class BaseViewPresenterUnitTest: XCTestCase {
     
-    var presenter: BaseViewPresenter<BaseViewMock>!
+    var presenter: BasePresenter<BaseViewMock>!
     let viewMock = BaseViewMock()
     let apiMock = GameAPIMock()
     
     override func setUp() {
         super.setUp()
         
-        presenter = BaseViewPresenter(view: viewMock, apiInstance: apiMock)
+        presenter = BasePresenter(view: viewMock, apiInstance: apiMock)
     }
     
     override func tearDown() {

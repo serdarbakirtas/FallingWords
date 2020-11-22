@@ -11,7 +11,7 @@ import XCTest
 
 class GameAPIMock: GameAPI {
     
-    var correctAnswer: Answers
+    var correctAnswer: Answers?
     var isFinishGameCalled = true
     var isRemoveAnswerCalled = false
     
@@ -33,7 +33,7 @@ class GameAPIMock: GameAPI {
     func getResults(completion: @escaping ([Answers]) -> Void) {
         isFinishGameCalled = false
         
-        completion([correctAnswer, correctAnswer, correctAnswer])
+        completion([correctAnswer!, correctAnswer!, correctAnswer!])
     }
     
     func sendAnswer(answer: Answers) {
@@ -41,6 +41,7 @@ class GameAPIMock: GameAPI {
     }
     
     func removeAnswerData() {
+        correctAnswer = nil
         isRemoveAnswerCalled = true
     }
 }
