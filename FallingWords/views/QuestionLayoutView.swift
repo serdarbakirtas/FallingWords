@@ -71,7 +71,7 @@ class QuestionLayoutView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     override func layoutSubviews() {
@@ -115,7 +115,7 @@ class QuestionLayoutView: UIView {
         })
     }
     
-    func removeAnimation() {
+    private func removeAnimation() {
         labelAnswer.layer.removeAllAnimations()
         animator?.stopAnimation(true)
     }

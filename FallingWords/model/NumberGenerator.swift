@@ -11,7 +11,4 @@ struct NumberGenerator: RandomNumberGenerator {
     func next() -> UInt64 {
         random()
     }
-    static let live = NumberGenerator(
-        random: { UInt64.random(in: 0...UInt64.max) }
-    )
 }

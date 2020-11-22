@@ -76,10 +76,8 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
                 playAgain(totalScore: totalCorrect.count, message: "😰 You did 3 wrongs")
             } else {
                 if currentQuestionNumber >= TOTAL_QUESTIONS_COUNT - 1 {
-                    apiInstance.getResults {[unowned self] (answers) in
-                        let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
-                        playAgain(totalScore: totalCorrect.count, message: "Congrats 🎉 Your score")
-                    }
+                    let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
+                    playAgain(totalScore: totalCorrect.count, message: "Congrats 🎉 Your score")
                 }
             }
         }

@@ -17,5 +17,6 @@ end
 
 target 'FallingWordsTests' do
   example_pods
+  pod 'MockUIAlertController', '3.2.0'
 end
 

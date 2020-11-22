@@ -15,10 +15,6 @@ class BaseViewController: UIViewController {
     
     private var presenter: BaseViewPresenter<BaseViewController>!
     
-    lazy var activityIndicatorForTables: UIActivityIndicatorView = {
-        UIActivityIndicatorView(style: .gray)
-    }()
-    
     lazy var fullScreenActivityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.backgroundColor = ColorPallet.ACCENT
