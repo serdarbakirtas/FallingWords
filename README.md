@@ -71,6 +71,11 @@
 ***
 + Decisions made to solve certain aspects of the game
 	- I decided how to generate the random number with minimum code.
+		+ All words are shuffled
+		+ // NOTE: Following two steps are made to have distributed equally wrong and correct answers.
+		+ 15 words are filtered from the shuffled list (1 correct, 1 wrong).
+		+ The filtered word list (15 words) are shuflled again.
+		+ Check the max 3 wrong answer or 15 word pair to show result.
 	- I decided the best architecture for the testable code.
 	- I decided to use UIKit instead of storyboard/xib files for good memory performance.
 + Decisions made because of restricted time
