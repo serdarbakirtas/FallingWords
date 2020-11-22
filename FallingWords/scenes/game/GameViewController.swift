@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol GameView: BaseView {}
+protocol GameView: BaseView {
+    func reloadGame(_ items: [GameData])
+}
 
 class GameViewController: BaseViewController {
 
@@ -21,6 +23,17 @@ class GameViewController: BaseViewController {
         presenter = GamePresenter(view: self)
         presenter.loadWordList()
     }
+    
+    // MARK: FUNCTIONS
+    private func getViewModelToCreateQuestion(index: Int) {
+        let wordViewModel = presenter.getWordViewModel(count: index)
+        print(wordViewModel.engName)
+    }
 }
 
-extension GameViewController: GameView {}
+extension GameViewController: GameView {
+    
+    func reloadGame(_ items: [GameData]) {
+        getViewModelToCreateQuestion(index: 0)
+    }
+}

@@ -21,8 +21,4 @@ extension PrimitiveSequence where Trait == SingleTrait {
         return self.do(onSubscribe: { view?.showFullScreenActivityIndicator(isShown: true) },
                        onDispose: { view?.showFullScreenActivityIndicator(isShown: false) })
     }
-    
-    func doOnSuccess(_ method: @escaping () -> Void) -> PrimitiveSequence {
-        return self.do(onSuccess: { _ in method() })
-    }
 }

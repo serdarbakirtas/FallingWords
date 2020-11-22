@@ -26,6 +26,8 @@
 		9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264522569DD4600C54EC0 /* BaseViewController.swift */; };
 		9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */; };
 		9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62645C2569DFE100C54EC0 /* GamePresenter.swift */; };
+		9F6264622569E2AF00C54EC0 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */; };
+		9F6264682569E38500C54EC0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264672569E38500C54EC0 /* GameViewModel.swift */; };
 		D9E2B6615572B13EF40A30B9 /* Pods_FallingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781FA0D7323644990159DF9F /* Pods_FallingWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		9F6264522569DD4600C54EC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewPresenter.swift; sourceTree = "<group>"; };
 		9F62645C2569DFE100C54EC0 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
+		9F6264672569E38500C54EC0 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		DA69CE460B0406169BDB6796 /* Pods-FallingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingWordsTests.release.xcconfig"; path = "Target Support Files/Pods-FallingWordsTests/Pods-FallingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,7 @@
 				9F62642B2569DAC100C54EC0 /* model */,
 				9F445B442569D63800789290 /* scenes */,
 				9F445B382569D60000789290 /* util */,
+				9F6264662569E36F00C54EC0 /* viewmodels */,
 				9F6264472569DD0700C54EC0 /* views */,
 				9F445AF32569D56500789290 /* AppDelegate.swift */,
 				9F445AF92569D56500789290 /* Main.storyboard */,
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				9F62642C2569DADA00C54EC0 /* APIError.swift */,
+				9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */,
 				9F6264342569DAE600C54EC0 /* WordList.swift */,
 			);
 			path = model;
@@ -259,6 +265,14 @@
 				9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		9F6264662569E36F00C54EC0 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				9F6264672569E38500C54EC0 /* GameViewModel.swift */,
+			);
+			path = viewmodels;
 			sourceTree = "<group>";
 		};
 		C27ED35BDA15B81CF6A44B2B /* Frameworks */ = {
@@ -488,6 +502,7 @@
 				9F445B512569D72F00789290 /* GameAPI.swift in Sources */,
 				9F6264352569DAE600C54EC0 /* WordList.swift in Sources */,
 				9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */,
+				9F6264682569E38500C54EC0 /* GameViewModel.swift in Sources */,
 				9F445AF42569D56500789290 /* AppDelegate.swift in Sources */,
 				9F445B562569D73900789290 /* GameAPIRepo.swift in Sources */,
 				9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */,
@@ -497,6 +512,7 @@
 				9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */,
 				9F62642D2569DADA00C54EC0 /* APIError.swift in Sources */,
 				9F62643B2569DB8900C54EC0 /* AFErrorConvertExtension.swift in Sources */,
+				9F6264622569E2AF00C54EC0 /* NumberGenerator.swift in Sources */,
 				9F6264432569DB9800C54EC0 /* RxObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
