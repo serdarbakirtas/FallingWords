@@ -41,7 +41,10 @@ class GameViewController: BaseViewController {
         
         title = "Falling Words"
         
+        UIFont.boldSystemFont(ofSize: 14)
+        
         barButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        barButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Verdana", size: 10.0)!], for: .normal)
         navigationItem.setRightBarButton(barButtonItem, animated: false)
         
         presenter = GamePresenter(view: self)
@@ -75,6 +78,7 @@ extension GameViewController: GameView {
     
     func reloadGame(_ items: [GameData]) {
         getViewModelToCreateQuestion(index: 0)
+        barButtonItem?.title = ""
     }
     
     func showThanksView() {
@@ -90,7 +94,7 @@ extension GameViewController: GameView {
     func isCorrectAnswer(_ isCorrect: Bool) {
         barButtonItem?.title = isCorrect == true ? "✔️" : "❌"
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
-            barButtonItem?.title = ""
+            barButtonItem?.title = "✔️ \(presenter.totalCorrectCount) - ❌ \(presenter.totalWrongCount)"
         }
     }
 }

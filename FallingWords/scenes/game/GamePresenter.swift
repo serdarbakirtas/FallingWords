@@ -16,6 +16,7 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     var isCorrectQuestion: Bool = true
     var currentQuestionNumber = 0
     var totalWrongCount = 0
+    var totalCorrectCount: Int = 0
     
     let TOTAL_QUESTIONS_COUNT = 15
     let MAX_TOTAL_WRONG_ANSWER = 3
@@ -69,15 +70,14 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     
     func isFinishGame() -> Bool {
         apiInstance.getResults {[unowned self] (answers) in
-            let totalWrong = answers.filter { $0.isCorrect == false } .map { $0.isCorrect }
-            self.totalWrongCount = totalWrong.count
+            totalWrongCount = answers.filter { $0.isCorrect == false } .map { $0.isCorrect }.count
+            totalCorrectCount = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }.count
             if totalWrongCount >= MAX_TOTAL_WRONG_ANSWER {
                 let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
                 playAgain(totalScore: totalCorrect.count, message: "😰 You did 3 wrongs")
             } else {
                 if currentQuestionNumber >= TOTAL_QUESTIONS_COUNT - 1 {
-                    let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
-                    playAgain(totalScore: totalCorrect.count, message: "Congrats 🎉 Your score")
+                    playAgain(totalScore: totalCorrectCount, message: "Congrats 🎉 Your score")
                 }
             }
         }
