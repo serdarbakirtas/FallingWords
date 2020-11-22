@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		021B10FF5F57C9F009580816 /* Pods_FallingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2D522966EE391392AA3899 /* Pods_FallingWords.framework */; };
 		9F445AF42569D56500789290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F445AF32569D56500789290 /* AppDelegate.swift */; };
-		9F445AFB2569D56500789290 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F445AF92569D56500789290 /* Main.storyboard */; };
 		9F445AFD2569D56500789290 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F445AFC2569D56500789290 /* Assets.xcassets */; };
 		9F445B002569D56500789290 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F445AFE2569D56500789290 /* LaunchScreen.storyboard */; };
 		9F445B0B2569D56600789290 /* FallingWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F445B0A2569D56600789290 /* FallingWordsTests.swift */; };
@@ -28,6 +27,9 @@
 		9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62645C2569DFE100C54EC0 /* GamePresenter.swift */; };
 		9F6264622569E2AF00C54EC0 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */; };
 		9F6264682569E38500C54EC0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264672569E38500C54EC0 /* GameViewModel.swift */; };
+		9F6264702569F34000C54EC0 /* QuestionLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62646F2569F34000C54EC0 /* QuestionLayoutView.swift */; };
+		9F6264752569F36C00C54EC0 /* BaseUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264742569F36C00C54EC0 /* BaseUILabel.swift */; };
+		9F62647A2569F38200C54EC0 /* BaseUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264792569F38200C54EC0 /* BaseUIButton.swift */; };
 		D9E2B6615572B13EF40A30B9 /* Pods_FallingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781FA0D7323644990159DF9F /* Pods_FallingWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +58,6 @@
 		781FA0D7323644990159DF9F /* Pods_FallingWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F445AF02569D56500789290 /* FallingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F445AF32569D56500789290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F445AFA2569D56500789290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F445AFC2569D56500789290 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F445AFF2569D56500789290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F445B012569D56500789290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +81,9 @@
 		9F62645C2569DFE100C54EC0 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
 		9F6264672569E38500C54EC0 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		9F62646F2569F34000C54EC0 /* QuestionLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLayoutView.swift; sourceTree = "<group>"; };
+		9F6264742569F36C00C54EC0 /* BaseUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUILabel.swift; sourceTree = "<group>"; };
+		9F6264792569F38200C54EC0 /* BaseUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIButton.swift; sourceTree = "<group>"; };
 		DA69CE460B0406169BDB6796 /* Pods-FallingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingWordsTests.release.xcconfig"; path = "Target Support Files/Pods-FallingWordsTests/Pods-FallingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +158,6 @@
 				9F6264662569E36F00C54EC0 /* viewmodels */,
 				9F6264472569DD0700C54EC0 /* views */,
 				9F445AF32569D56500789290 /* AppDelegate.swift */,
-				9F445AF92569D56500789290 /* Main.storyboard */,
 				9F445AFC2569D56500789290 /* Assets.xcassets */,
 				9F445AFE2569D56500789290 /* LaunchScreen.storyboard */,
 				9F445B012569D56500789290 /* Info.plist */,
@@ -246,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				9F6264482569DD1C00C54EC0 /* base */,
+				9F62646F2569F34000C54EC0 /* QuestionLayoutView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -253,6 +257,8 @@
 		9F6264482569DD1C00C54EC0 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				9F6264742569F36C00C54EC0 /* BaseUILabel.swift */,
+				9F6264792569F38200C54EC0 /* BaseUIButton.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -393,7 +399,6 @@
 			files = (
 				9F445B002569D56500789290 /* LaunchScreen.storyboard in Resources */,
 				9F445AFD2569D56500789290 /* Assets.xcassets in Resources */,
-				9F445AFB2569D56500789290 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,11 +505,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F445B512569D72F00789290 /* GameAPI.swift in Sources */,
+				9F6264752569F36C00C54EC0 /* BaseUILabel.swift in Sources */,
 				9F6264352569DAE600C54EC0 /* WordList.swift in Sources */,
 				9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */,
 				9F6264682569E38500C54EC0 /* GameViewModel.swift in Sources */,
+				9F6264702569F34000C54EC0 /* QuestionLayoutView.swift in Sources */,
 				9F445AF42569D56500789290 /* AppDelegate.swift in Sources */,
 				9F445B562569D73900789290 /* GameAPIRepo.swift in Sources */,
+				9F62647A2569F38200C54EC0 /* BaseUIButton.swift in Sources */,
 				9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */,
 				9F445B472569D65000789290 /* GameViewController.swift in Sources */,
 				9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */,
@@ -549,14 +557,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9F445AF92569D56500789290 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F445AFA2569D56500789290 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9F445AFE2569D56500789290 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

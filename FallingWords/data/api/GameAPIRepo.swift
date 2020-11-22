@@ -10,6 +10,9 @@ import RxSwift
 
 class GameAPIRepo: GameAPI {
     
+    // MARK: PROPERTIES
+    var answersData = [Answers]()
+    
     // SINGLETON
     static let sharedInstance = GameAPIRepo()
     
@@ -52,5 +55,19 @@ class GameAPIRepo: GameAPI {
     func getWordList() -> Single<[WordList]> {
         let url = "7ac6cdb4bf5e032f4c737aaafe659b33/raw/baa9fe0d586082d85db71f346e2b039c580c5804/words.json"
         return createSingleRequest(url: GameAPIRepo.BASE_URL + url, method: .get)
+    }
+    
+    func getResults(completion: @escaping ([Answers]) -> Void) {
+        completion(answersData)
+    }
+    
+    // MARK: POST
+    func sendAnswer(answer: Answers) {
+        answersData.append(answer)
+    }
+    
+    // MARK: REMOVE
+    func removeAnswerData() {
+        answersData.removeAll()
     }
 }

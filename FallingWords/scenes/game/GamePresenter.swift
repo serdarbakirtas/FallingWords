@@ -17,7 +17,7 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     var currentQuestionNumber = 0
     var totalWrongCount = 0
     
-    let NUMBER_OF_QUESTIONS = 15
+    let TOTAL_QUESTIONS_COUNT = 15
     let MAX_TOTAL_WRONG_ANSWER = 3
     
     override init(view: T, apiInstance: GameAPI = GameAPIRepo.sharedInstance) {
@@ -31,19 +31,19 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     }
     
     private func createNewGameWithRandomWords() {
-        var random = NumberGenerator(random: { UInt64(self.NUMBER_OF_QUESTIONS) })
-        let allWordsShuffled = items.shuffled(using: &random).shuffled()
-        let shuffledPrefix = Array(allWordsShuffled.prefix(NUMBER_OF_QUESTIONS))
-        let shuffledSuffix = Array(allWordsShuffled.suffix(NUMBER_OF_QUESTIONS))
+        var random = NumberGenerator(random: { UInt64(self.TOTAL_QUESTIONS_COUNT) })
+        let wordsShuffled = items.shuffled(using: &random).shuffled()
+        let prefix = Array(wordsShuffled.prefix(TOTAL_QUESTIONS_COUNT))
+        let suffix = Array(wordsShuffled.suffix(TOTAL_QUESTIONS_COUNT))
         
-        for (index, _) in allWordsShuffled.enumerated() {
-            if result.count < NUMBER_OF_QUESTIONS {
+        for (index, _) in wordsShuffled.enumerated() {
+            if result.count < TOTAL_QUESTIONS_COUNT {
                 if isCorrectQuestion {
-                    result.append(GameData(question: shuffledPrefix[index].eng, answer: shuffledPrefix[index].spa,
+                    result.append(GameData(question: prefix[index].eng, answer: prefix[index].spa,
                                            isTranslation: isCorrectQuestion))
                 } else {
-                    result.append(GameData(question: shuffledPrefix[index].eng, answer: shuffledSuffix[index].spa,
-                                           isTranslation: shuffledSuffix[index].spa == shuffledPrefix[index].spa))
+                    result.append(GameData(question: prefix[index].eng, answer: suffix[index].spa,
+                                           isTranslation: suffix[index].spa == prefix[index].spa))
                 }
                 isCorrectQuestion = !isCorrectQuestion
             }
@@ -55,6 +55,66 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     func getWordViewModel(count: Int) -> GameViewModel {
         let gameWord = result[count]
         return GameViewModel(from: gameWord)
+    }
+    
+    func onSendAnswer(isAnswer: Bool) {
+        if isAnswer == result[currentQuestionNumber].isTranslation {
+            apiInstance.sendAnswer(answer: Answers(isCorrect: true))
+            view?.isCorrectAnswer(true)
+        } else {
+            apiInstance.sendAnswer(answer: Answers(isCorrect: false))
+            view?.isCorrectAnswer(false)
+        }
+    }
+    
+    func isFinishGame() -> Bool {
+        apiInstance.getResults {[unowned self] (answers) in
+            let totalWrong = answers.filter { $0.isCorrect == false } .map { $0.isCorrect }
+            self.totalWrongCount = totalWrong.count
+            if totalWrongCount >= MAX_TOTAL_WRONG_ANSWER {
+                let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
+                playAgain(totalScore: totalCorrect.count, message: "😰 You did 3 wrongs")
+            } else {
+                if currentQuestionNumber >= TOTAL_QUESTIONS_COUNT - 1 {
+                    apiInstance.getResults {[unowned self] (answers) in
+                        let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
+                        playAgain(totalScore: totalCorrect.count, message: "Congrats 🎉 Your score")
+                    }
+                }
+            }
+        }
+        return currentQuestionNumber == TOTAL_QUESTIONS_COUNT - 1 || totalWrongCount == MAX_TOTAL_WRONG_ANSWER
+    }
+    
+    func getNextQuestionCount() -> Int {
+        currentQuestionNumber += 1
+        return currentQuestionNumber
+    }
+    
+    private func playAgain(totalScore: Int, message: String) {
+        self.pauseGame()
+        var actions = [UIAlertAction]()
+        actions.append(UIAlertAction(title: "yes", style: .default, handler: { _ in
+            self.pauseGame()
+            self.createNewGameWithRandomWords()
+            self.resetGameData()
+        }))
+        actions.append(UIAlertAction(title: "no", style: .destructive, handler: { _ in
+            self.pauseGame()
+            self.view?.showThanksView()
+        }))
+        view?.showAlert(title: message + " \(TOTAL_QUESTIONS_COUNT) / \(totalScore)", message: "Play again?", actions: actions)
+    }
+    
+    private func pauseGame() {
+        apiInstance.removeAnswerData()
+        result.removeAll()
+    }
+    
+    private func resetGameData() {
+        currentQuestionNumber = 0
+        totalWrongCount = 0
+        isCorrectQuestion = true
     }
     
     // MARK: API CALLS

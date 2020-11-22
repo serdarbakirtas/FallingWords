@@ -20,3 +20,7 @@ struct GameData {
     var answer: String
     var isTranslation: Bool
 }
+
+struct Answers {
+    var isCorrect: Bool
+}
