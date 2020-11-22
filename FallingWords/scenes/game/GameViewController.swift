@@ -41,8 +41,6 @@ class GameViewController: BaseViewController {
         
         title = "Falling Words"
         
-        UIFont.boldSystemFont(ofSize: 14)
-        
         barButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         barButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Verdana", size: 10.0)!], for: .normal)
         navigationItem.setRightBarButton(barButtonItem, animated: false)

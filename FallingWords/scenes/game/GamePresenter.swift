@@ -74,10 +74,10 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
             totalCorrectCount = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }.count
             if totalWrongCount >= MAX_TOTAL_WRONG_ANSWER {
                 let totalCorrect = answers.filter { $0.isCorrect == true } .map { $0.isCorrect }
-                playAgain(totalScore: totalCorrect.count, message: "😰 You did 3 wrongs")
+                askUserGameEndScenerio(totalScore: totalCorrect.count, message: "😰 You did 3 wrongs")
             } else {
                 if currentQuestionNumber >= TOTAL_QUESTIONS_COUNT - 1 {
-                    playAgain(totalScore: totalCorrectCount, message: "Congrats 🎉 Your score")
+                    askUserGameEndScenerio(totalScore: totalCorrectCount, message: "Congrats 🎉 Your score")
                 }
             }
         }
@@ -89,22 +89,22 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
         return currentQuestionNumber
     }
     
-    private func playAgain(totalScore: Int, message: String) {
-        self.pauseGame()
+    private func askUserGameEndScenerio(totalScore: Int, message: String) {
+        removeDatas()
         var actions = [UIAlertAction]()
         actions.append(UIAlertAction(title: "yes", style: .default, handler: { _ in
-            self.pauseGame()
+            self.removeDatas()
             self.createNewGameWithRandomWords()
             self.resetGameData()
         }))
         actions.append(UIAlertAction(title: "no", style: .destructive, handler: { _ in
-            self.pauseGame()
+            self.removeDatas()
             self.view?.showThanksView()
         }))
         view?.showAlert(title: message + " \(TOTAL_QUESTIONS_COUNT) / \(totalScore)", message: "Play again?", actions: actions)
     }
     
-    private func pauseGame() {
+    private func removeDatas() {
         apiInstance.removeAnswerData()
         result.removeAll()
     }
