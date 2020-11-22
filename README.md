@@ -71,8 +71,8 @@
 ***
 + Decisions made to solve certain aspects of the game
 	- I decided how to generate the random number with minimum code.
-		+ All words are shuffled
-		// NOTE: Following two steps are made to have distributed equally wrong and correct answers.
+		+ *NOTE: Following steps are made to have distributed equally wrong and correct answers.*
+		+ All words are shuffled.
 		+ 15 words are filtered from the shuffled list (1 correct, 1 wrong).
 		+ The filtered word list (15 words) are shuflled again.
 		+ Check the max 3 wrong answer or 15 word pair to show result.
@@ -82,5 +82,5 @@
 	- I worked on the design architecture which I have more experienced.
 	- I implemented simple design.
 + Improve or add if there had been more time
- 	- UI Test
-	- Use locale storage to save the scores
+ 	- UI Test.
+	- Use locale storage to save the scores.
