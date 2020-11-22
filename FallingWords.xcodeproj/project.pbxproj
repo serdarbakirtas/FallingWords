@@ -25,6 +25,7 @@
 		9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62644A2569DD3900C54EC0 /* BasePresenterView.swift */; };
 		9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264522569DD4600C54EC0 /* BaseViewController.swift */; };
 		9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */; };
+		9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62645C2569DFE100C54EC0 /* GamePresenter.swift */; };
 		D9E2B6615572B13EF40A30B9 /* Pods_FallingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781FA0D7323644990159DF9F /* Pods_FallingWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		9F62644A2569DD3900C54EC0 /* BasePresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenterView.swift; sourceTree = "<group>"; };
 		9F6264522569DD4600C54EC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewPresenter.swift; sourceTree = "<group>"; };
+		9F62645C2569DFE100C54EC0 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		DA69CE460B0406169BDB6796 /* Pods-FallingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingWordsTests.release.xcconfig"; path = "Target Support Files/Pods-FallingWordsTests/Pods-FallingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				9F445B462569D65000789290 /* GameViewController.swift */,
+				9F62645C2569DFE100C54EC0 /* GamePresenter.swift */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				9F445B562569D73900789290 /* GameAPIRepo.swift in Sources */,
 				9F62644B2569DD3900C54EC0 /* BasePresenterView.swift in Sources */,
 				9F445B472569D65000789290 /* GameViewController.swift in Sources */,
+				9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */,
 				9F445B3A2569D61500789290 /* ColorPallet.swift in Sources */,
 				9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */,
 				9F62642D2569DADA00C54EC0 /* APIError.swift in Sources */,

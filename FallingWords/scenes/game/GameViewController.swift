@@ -7,11 +7,20 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+protocol GameView: BaseView {}
 
+class GameViewController: BaseViewController {
+
+    var presenter: GamePresenter<GameViewController>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Falling Words"
+        
+        presenter = GamePresenter(view: self)
+        presenter.loadWordList()
     }
 }
+
+extension GameViewController: GameView {}
