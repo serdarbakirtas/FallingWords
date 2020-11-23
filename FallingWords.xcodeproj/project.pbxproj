@@ -24,7 +24,6 @@
 		9F6264532569DD4600C54EC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264522569DD4600C54EC0 /* BaseViewController.swift */; };
 		9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */; };
 		9F62645D2569DFE100C54EC0 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62645C2569DFE100C54EC0 /* GamePresenter.swift */; };
-		9F6264622569E2AF00C54EC0 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */; };
 		9F6264682569E38500C54EC0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264672569E38500C54EC0 /* GameViewModel.swift */; };
 		9F6264702569F34000C54EC0 /* QuestionLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62646F2569F34000C54EC0 /* QuestionLayoutView.swift */; };
 		9F6264752569F36C00C54EC0 /* BaseUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6264742569F36C00C54EC0 /* BaseUILabel.swift */; };
@@ -83,7 +82,6 @@
 		9F6264522569DD4600C54EC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F6264572569DD6600C54EC0 /* BaseViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewPresenter.swift; sourceTree = "<group>"; };
 		9F62645C2569DFE100C54EC0 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
-		9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
 		9F6264672569E38500C54EC0 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		9F62646F2569F34000C54EC0 /* QuestionLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLayoutView.swift; sourceTree = "<group>"; };
 		9F6264742569F36C00C54EC0 /* BaseUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUILabel.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				9F62642C2569DADA00C54EC0 /* APIError.swift */,
-				9F6264612569E2AF00C54EC0 /* NumberGenerator.swift */,
 				9F6264342569DAE600C54EC0 /* WordList.swift */,
 			);
 			path = model;
@@ -574,7 +571,6 @@
 				9F6264582569DD6600C54EC0 /* BaseViewPresenter.swift in Sources */,
 				9F62642D2569DADA00C54EC0 /* APIError.swift in Sources */,
 				9F62643B2569DB8900C54EC0 /* AFErrorConvertExtension.swift in Sources */,
-				9F6264622569E2AF00C54EC0 /* NumberGenerator.swift in Sources */,
 				9F6264432569DB9800C54EC0 /* RxObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

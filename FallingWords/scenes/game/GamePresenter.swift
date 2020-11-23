@@ -32,8 +32,7 @@ class GamePresenter<T: GameView>: BasePresenter<T> {
     }
     
     private func createNewGameWithRandomWords() {
-        var random = NumberGenerator(random: { UInt64(self.TOTAL_QUESTIONS_COUNT) })
-        let wordsShuffled = items.shuffled(using: &random).shuffled()
+        let wordsShuffled = items.shuffled()
         let prefix = Array(wordsShuffled.prefix(TOTAL_QUESTIONS_COUNT))
         let suffix = Array(wordsShuffled.suffix(TOTAL_QUESTIONS_COUNT))
         
