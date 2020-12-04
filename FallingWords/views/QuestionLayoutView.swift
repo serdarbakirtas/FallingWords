@@ -120,6 +120,11 @@ class QuestionLayoutView: UIView {
         animator?.stopAnimation(true)
     }
     
+    func setQuestionnaire(_ viewModel: GameViewModel) {
+        labelQuestion.text = viewModel.engName
+        labelAnswer.text = viewModel.spaName
+    }
+    
     // MARK: ACTIONS
     @objc func onTapCorrectAnswer() {
         removeAnimation()

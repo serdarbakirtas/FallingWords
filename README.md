@@ -50,7 +50,7 @@
 ## Design and Implementation guidelines
 ***
 + All UI is developed in code using UIKit (no Xib/Storyboards).
-+ RxSwift is used for api calls.
++ RxSwift is used for network layers.
 + Implemented simple design and existing best practices of UI/UX and software design.
 
 ## Estimate and Desicison
@@ -66,25 +66,3 @@
  	- Naming of files in tests folder:
 		+ For unit test: *Some*UnitTest
 		+ For mock data: *Some*Mock
-		
-## Output Answers
-***
-+ Decisions made to solve certain aspects of the game
-	- I decided how to generate the random number with minimum code.
-		+ *NOTE: Following steps are made to have distributed equally wrong and correct answers.*
-		+ All words are shuffled.
-		+ 15 words are filtered from the shuffled list (1 correct, 1 wrong).
-		+ The filtered word list (15 words) are shuflled again.
-		+ Check the max 3 wrong answer or 15 word pair to show result.
-	- I decided the best architecture for the testable code.
-	- I decided to use UIKit instead of storyboard/xib files for good memory performance.
-	- I decided to use URL (https://gist.githubusercontent.com/DroidCoder/7ac6cdb4bf5e032f4c737aaafe659b33/raw/baa9fe0d586082d85db71f346e2b039c580c5804/words.json) to get word list. 
-+ Decisions made because of restricted time
-	- I worked on the design architecture which I have more experienced.
-	- I implemented simple design.
-+ Improve or add if there had been more time
- 	- UI Test.
-	- Use locale storage to save the scores.
-	- Write more test scenenerio for code coverage.
-	- Check word list count. (Is it less than the wrong answers count and total questions count?)
-		+ The word list can be less than the question count and wrong answer.

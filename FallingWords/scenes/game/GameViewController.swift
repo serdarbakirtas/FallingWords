@@ -54,8 +54,7 @@ class GameViewController: BaseViewController {
     // MARK: FUNCTIONS
     private func getViewModelToCreateQuestion(index: Int) {
         let wordViewModel = presenter.getWordViewModel(count: index)
-        questionLayoutView.labelQuestion.text = wordViewModel.engName
-        questionLayoutView.labelAnswer.text = wordViewModel.spaName
+        questionLayoutView.setQuestionnaire(wordViewModel)
         questionLayoutView.addFallingWordAnimation()
     }
     
