@@ -53,14 +53,8 @@
 + RxSwift is used for network layers.
 + Implemented simple design and existing best practices of UI/UX and software design.
 
-## Estimate and Desicison
+## Unit Test
 ***
-+ Completed the full task to be completed within 6.5h time box.
-	- Planning 30m
-		+ Choosing best design architecture for the project.
-		+ Researching best algorithm for random numbers of the data.
-+ Development and Design implementation 4h.
-	- Look at the "Design and Implementation guidelines" and "Code Style"
 + Unit test 2h 
  	- %78.2 Code coverage
  	- Naming of files in tests folder:
